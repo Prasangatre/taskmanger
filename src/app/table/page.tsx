@@ -37,10 +37,10 @@ const TaskTable = ({
   const ITEMS_PER_PAGE = 10;
 
   const statusCounts = {
-    OPEN: allTasks.filter((task) => task.status === "OPEN").length,
-    IN_PROGRESS: allTasks.filter((task) => task.status === "IN_PROGRESS")
+    OPEN: allTasks?.filter((task) => task.status === "OPEN").length,
+    IN_PROGRESS: allTasks?.filter((task) => task.status === "IN_PROGRESS")
       .length,
-    CLOSED: allTasks.filter((task) => task.status === "CLOSED").length,
+    CLOSED: allTasks?.filter((task) => task.status === "CLOSED").length,
   };
 
   const columns = [
@@ -132,7 +132,7 @@ const TaskTable = ({
     setLoading(true);
 
     try {
-      const filteredTasks = allTasks.filter(
+      const filteredTasks = allTasks?.filter(
         (task) => task.status === activeTab
       );
       const startIndex = currentPage * ITEMS_PER_PAGE;

@@ -167,7 +167,7 @@ export function DetailModal({
               </form>
               <div className="space-y-4">
                 {comments
-                  .filter((comment) => comment.task_id === selectedTask.id)
+                  ?.filter((comment) => comment.task_id === selectedTask.id)
                   .map((comment) => (
                     <div key={comment.id} className="p-3 bg-gray-50 rounded">
                       <div className="flex justify-between items-start">
