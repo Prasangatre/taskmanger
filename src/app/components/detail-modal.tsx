@@ -115,12 +115,17 @@ export function DetailModal({
           <div className="p-4 border-b">
             <h2 className="text-xl font-semibold">Task Details</h2>
           </div>
-          <div className="p-4 flex-1 overflow-y-auto">
-            <div className="mb-4">
-              <h3 className="font-medium">Task Information</h3>
+          <div className="p-4 flex-1 overflow-y-auto ">
+            <h3 className="font-medium">Task Information</h3>
+
+            <div className=" grid grid-cols-2 gap-4 mb-4">
               <p>Name: {selectedTask.name}</p>
               <p>Priority: {selectedTask.priority}</p>
               <p>Status: {selectedTask.status}</p>
+
+              <p>
+                Created: {new Date(selectedTask.created_at).toLocaleString()}
+              </p>
               <div className="flex items-center gap-2 mt-2">
                 <span>Status:</span>
                 <select
@@ -139,13 +144,8 @@ export function DetailModal({
                   (Shortcut: 1-Open, 2-In Progress, 3-Closed)
                 </span>
               </div>
-
-              <p>
-                Created: {new Date(selectedTask.created_at).toLocaleString()}
-              </p>
             </div>
 
-            {/* Comments Section */}
             <div className="mt-6">
               <h3 className="font-medium mb-4">Comments</h3>
               <form onSubmit={handleAddComment} className="mb-4">

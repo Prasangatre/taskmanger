@@ -311,7 +311,7 @@ const TaskTable = ({
                 onClick={() => setSelectedTask(row.original)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 className={`cursor-pointer ${
-                  index === hoveredIndex ? "bg-yellow-100" : "hover:bg-gray-50"
+                  index === hoveredIndex ? "bg-orange-50" : "hover:bg-gray-50"
                 }`}
               >
                 {row.getVisibleCells().map((cell) => (
